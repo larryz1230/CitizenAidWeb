@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
 
     require_once 'connect.php';
 
-    $sql = "SELECT * FROM users_table WHERE email='$email' ";
+    $sql = "SELECT * FROM citizen_aid_table WHERE email='$email' ";
 
     $response = mysqli_query($conn, $sql);
 
@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST') {
             $index['name'] = $row['name'];
             $index['email'] = $row['email'];
             $index['id'] = $row['id'];
+            $index['isCitizen'] = $row['isCitizen'];
 		
 
             array_push($result['login'], $index);
